@@ -7,7 +7,7 @@
   <title>Skills</title>
 </head>
 <body>
-  <h1>Skill</h1>
+  <h1>Details</h1>
   <% if(error) { %>
     <h2><%= error %> </h2> 
     <% } else { %> 
@@ -15,6 +15,13 @@
       <h3><%= skill.text %> </h3>
       <p>Learned: <%= skill.learned ? "Yes" : "No" %> </p>
   <% } %>
+  <form action="/skills/<%= skill._id  %>?_method=DELETE" 
+    class="delete-form"
+    method="post"  
+    >
+    
+  <a href="/skills" onclick="this.closest('form').submit();return false;">Delete Skill</a>
+  </form>
   <a href="/skills">Go Back</a> 
 </body>
 </html>
